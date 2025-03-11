@@ -117,7 +117,7 @@ motor.set_parameter("iq_ref", 0.5)
 
 [Full example](./examples/torque_mode.py)
 
-## Current motor state
+## Get the motor state
 
 There's a single command to request the position, torque, velocity, and temperature of the motor. The controller will listen for the response and automatically add it to the state dict.
 
@@ -139,18 +139,18 @@ motor.request_motor_state()
 
 ## Reading and writing motor config and parameters
 
-The motor has two lists of values that you can read and write. Config values are saved between power cycles. Parameter values control motor activity and are reset on power down.
+The motor has two lists of values that you can read and write to. Config values are saved between power cycles and parameter values control motor activity and are reset on power down.
 
-NOTE: CyberGear calls both of these sets of values "parameters". In the driver we differentiate them to "config" and "parameters". This is because they are read and saved slightly differently.
+NOTE: CyberGear calls both of these sets of values "parameters". However, in the driver we differentiate them as "config" and "parameters" because they are read and saved slightly differently. There are also some value names that exist in both lists.
 
-To see the full list of config and parameters, goto the [motor docs](https://wiki.openelab.io/motors/cybergear-micromotor-instruction-manual#id-4.-driver-communication-protocol-and-usage-instructions) for a full list of parameters)
+To see the full tables of values, goto the [motor docs](https://wiki.openelab.io/motors/cybergear-micromotor-instruction-manual#id-4.-driver-communication-protocol-and-usage-instructions)
 
-- Config values: section 3.3.3 (CyberGear calls them parameters)
+- Config values: section 3.3.3 (CyberGear also calls them parameters)
 - Parameter values: section 4.1.12
 
-### Read config values
+### Read a config value
 
-To read a value, you have to request it from the motor. The driver will handle the response reading it and assigning it to it's internal config dict.
+To read a value, you have to request it from the motor and wait for it to come back. Then you can read it from the config dict.
 
 ```python
 motor.request_config("MechOffset")
@@ -158,7 +158,7 @@ time.sleep(1)
 print(motor.config.get("MechOffset"))
 ```
 
-You can also use an event listener to be notified when config values are retrieved
+You can also use an event listener to be notified when config value is retrieved
 
 ```python
 def config_value_received(name: str, value: str):
@@ -170,7 +170,9 @@ motor.request_config("MechOffset")
 
 ### Set config values
 
-Be careful when setting config values. Many of them cannot be written to, and others are core to how the motor works -- you could break your motor if you don't know what you're doing.
+Not all config values can be written to (refer to the table in [the docs](https://wiki.openelab.io/motors/cybergear-micromotor-instruction-manual#id-4.-driver-communication-protocol-and-usage-instructions)).
+
+Be careful when setting config values. Many are core to how the motor works and you could break your motor if you don't know what you're doing.
 
 ```python
 motor.set_config("overTempTime", 20001)
@@ -178,7 +180,7 @@ motor.set_config("overTempTime", 20001)
 
 ### Read parameter values
 
-To read a parameter, you have to request it from the motor. The driver will handle reading the response and assigning it to it's internal parameter value dict.
+To read a parameter, you have to request it from the motor and wait for it to come back. Then you can read it from the parameters dict.
 
 ```python
 motor.request_parameter("loc_ref")
@@ -196,12 +198,10 @@ motor.on("param_received", param_value_received)
 motor.request_parameter("loc_ref")
 ```
 
-### Set config values
-
-Be careful when setting config values. Many of them cannot be written to, and others are core to how the motor works -- you could break your motor if you don't know what you're doing.
+### Set parameter values
 
 ```python
-motor.set_config("overTempTime", 20001)
+motor.set_parameter("loc_ref", 5)
 ```
 
 ## Motor errors

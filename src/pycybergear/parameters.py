@@ -1,4 +1,3 @@
-from enum import Enum
 from typing import Literal
 
 from pycybergear.constants import DataType, READ_ONLY, READ_WRITE

@@ -1,4 +1,3 @@
-from typing import Literal
 from enum import Enum
 
 DEFAULT_HOST_CAN_ID = 0

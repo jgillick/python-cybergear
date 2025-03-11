@@ -4,7 +4,7 @@ import traceback
 from numbers import Real
 from typing import Callable
 
-from .can import CyberMotorMessage
+from pycybergear.can import CyberMotorMessage
 from pycybergear.utils import (
     float_to_uint,
     uint_to_float,

@@ -1,6 +1,6 @@
 import struct
 from numbers import Real
-from typing import Union, Tuple
+from typing import Tuple
 from pycybergear.constants import DataType
 
 

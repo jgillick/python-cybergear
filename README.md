@@ -15,7 +15,7 @@ pip install CyberGearDriver
 
 ## CAN Interface
 
-Since there are so many CAN interfaces, the motor driver does not have built-in CAN drivers but has a couple
+Since there are so many CAN interfaces available, the motor driver does not have built-in CAN drivers but has a couple
 simple methods to connect external CAN drivers to it.
 
 For example, using a Serial CAN USB adapter with `python-can` would look something like this:
@@ -66,7 +66,8 @@ This is sometimes called MIT mode and combines position, speed, and torque to mo
 motor.enable()
 motor.mode(RunMode.OPERATION_CONTROL)
 
-motor.control(position=-6, velocity=0, torque=0, kp=0.1, kd=0.1)
+# Move the motor to position 6 (in radians from the zero position)
+motor.control(position=6, velocity=0, torque=0, kp=0.1, kd=0.1)
 ```
 
 [Full example](./examples/operation_control_mode.py)

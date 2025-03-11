@@ -14,8 +14,7 @@ pip install CyberGearDriver
 
 ## CAN Interface
 
-Since there are so many CAN interfaces available, the motor driver does not have built-in CAN drivers but has a couple
-simple methods to connect external CAN drivers to it.
+Since there are so many CAN interfaces available, this library doesn't have a built-in CAN driver but provides a simple method to connect it to your CAN library of choice.
 
 For example, using a Serial CAN USB adapter with `python-can` would look something like this:
 

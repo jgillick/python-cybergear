@@ -1,7 +1,6 @@
 # Python CyberGear Motor Driver
 
 A python driver for the [CyberGear motor](https://openelab.io/blogs/learn/what-is-xiaomi-cybergear-micromotor).
-This driver uses a CAN bus interface to communicate with and drive the motor.
 
 [CyberGear user manual](https://wiki.openelab.io/motors/cybergear-micromotor-instruction-manual#id-3.-debugger-usage-instructions-download-link-below)
 

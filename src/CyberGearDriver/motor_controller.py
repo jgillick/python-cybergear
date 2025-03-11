@@ -4,15 +4,15 @@ import traceback
 from numbers import Real
 from typing import Callable
 
-from pycybergear.can import CyberMotorMessage
-from pycybergear.utils import (
+from CyberGearDriver.can import CyberMotorMessage
+from CyberGearDriver.utils import (
     float_to_uint,
     uint_to_float,
     extract_type,
     encode_to_bytes,
 )
-from pycybergear.event_emitter import EventEmitter
-from pycybergear.parameters import (
+from CyberGearDriver.event_emitter import EventEmitter
+from CyberGearDriver.parameters import (
     ConfigName,
     ParameterName,
     get_parameter_by_name,
@@ -20,7 +20,7 @@ from pycybergear.parameters import (
     get_config_by_addr,
     get_config_by_name,
 )
-from pycybergear.constants import (
+from CyberGearDriver.constants import (
     Command,
     RunMode,
     DataType,

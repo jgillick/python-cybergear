@@ -10,7 +10,7 @@ This driver uses a CAN bus interface to communicate with and drive the motor.
 Install the package from pip:
 
 ```bash
-pip install pycybergear
+pip install CyberGearDriver
 ```
 
 ## CAN Interface
@@ -22,7 +22,7 @@ For example, using a Serial CAN USB adapter with `python-can` would look somethi
 
 ```python
 import can
-from pycybergear import CyberGearMotor, RunMode, CyberMotorMessage
+from CyberGearDriver import CyberGearMotor, RunMode, CyberMotorMessage
 
 # Connect to the bus with python-can
 # @see https://python-can.readthedocs.io/en/stable/installation.html

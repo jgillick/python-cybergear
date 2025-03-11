@@ -3,7 +3,7 @@ import can
 import time
 from arg_parser import parse_args
 
-from pycybergear import CyberGearMotor, RunMode, CyberMotorMessage
+from CyberGearDriver import CyberGearMotor, RunMode, CyberMotorMessage
 
 bus: can.Bus
 motor: CyberGearMotor

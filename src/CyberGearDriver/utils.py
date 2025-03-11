@@ -1,7 +1,7 @@
 import struct
 from numbers import Real
 from typing import Tuple
-from pycybergear.constants import DataType
+from CyberGearDriver.constants import DataType
 
 
 def float_to_uint(value: float, range_min: float, range_max: float, bits: int) -> int:

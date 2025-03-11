@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pycybergear.constants import P_MIN, P_MAX, V_MIN, V_MAX, T_MIN, T_MAX
+from CyberGearDriver.constants import P_MIN, P_MAX, V_MIN, V_MAX, T_MIN, T_MAX
 
 StateValues = (
     ("position", (P_MIN, P_MAX)),

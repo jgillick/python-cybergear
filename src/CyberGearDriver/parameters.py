@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pycybergear.constants import DataType, READ_ONLY, READ_WRITE
+from CyberGearDriver.constants import DataType, READ_ONLY, READ_WRITE
 
 ###
 # Built-in motor configuration parameters stored in flash

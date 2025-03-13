@@ -72,7 +72,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        if motor:
-            motor.stop()
-        if bus:
-            bus.shutdown()
+        print("Shutting down")
+        notifier.stop()
+        motor.stop()
+        bus.shutdown()
